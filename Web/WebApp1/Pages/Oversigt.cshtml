@@ -1,0 +1,16 @@
+﻿@page
+@model WebApp1.Pages.OversigtModel
+@{
+    ViewData["Title"] = "Bestyrelses Oversigt";
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr />
+
+@foreach (var user in Model.Users)
+{
+    <ul>
+        <h2>@user.UserName (@user.Email)</h2>
+    </ul>
+    <hr />
+}

@@ -1,0 +1,19 @@
+﻿@page
+@model WebApp1.Pages.AddDocumentModel
+@{
+    ViewData["Title"] = "Skriv Opslag";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+ <form method="post">
+    <div>
+        <label for="document.Title">Titel:</label>
+        <input id="document.Title" name="document.Title" type="text"/>
+    </div>
+    <div>
+        <label for="dociment.Content">Indhold:</label>
+        <input id="document.Content" name="document.Content" type="text"
+    </div>
+    <button type="submit">Tilføj Opslag</button>
+ </form>

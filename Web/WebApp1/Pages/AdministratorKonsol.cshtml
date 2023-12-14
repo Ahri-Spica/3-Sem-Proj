@@ -1,0 +1,25 @@
+﻿@page
+@model WebApp1.Pages.AdministratorKonsolModel
+@{
+    ViewData["Title"] = "Administrator Konsol";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@foreach (var user in Model.Users)
+{
+    <form method="post">
+        <h3>@user.UserName (@user.Email)</h3>
+
+        <input type="hidden" name="userId" value="@user.UserId" />
+
+        @foreach (var role in Model.AllRoles)
+        {
+            <input type="checkbox" id="@role-@user.UserId" name="roles" value="@role"
+            @(user.Roles.Contains(role)? "checked" : "") />
+            <label for="@role-@user.UserId">@role</label>
+        }
+        <button type="submit">Update Roles</button>
+    </form>
+    <hr />
+}
