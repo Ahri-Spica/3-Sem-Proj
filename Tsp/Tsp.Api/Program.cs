@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Tsp.Application.Commands;
 using Tsp.Domain.IDomainService;
 using Tsp.Infrastructure;
 using Tsp.Infrastructure.Repos;
@@ -18,6 +19,7 @@ builder.Services.AddDbContext<TspContext>(options => options.UseNpgsql(builder.C
     }));
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehaviour", true);
 builder.Services.AddScoped<IDocumentRepository, DocumentRepository>();
+builder.Services.AddScoped<IRentalCommand, RentalCommand>();
 
 var app = builder.Build();
 

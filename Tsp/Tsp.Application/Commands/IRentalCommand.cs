@@ -10,6 +10,6 @@ namespace Tsp.Application.Commands
 {
     public interface IRentalCommand
     {
-        Task<Rental> Rental(RentalWriteDTO rentalWriteDTO);
+        Task<Rental> RentItem(RentalWriteDTO rentalWriteDTO);
     }
 }
