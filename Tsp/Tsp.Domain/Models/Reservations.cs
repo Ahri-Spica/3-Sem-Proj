@@ -9,6 +9,7 @@ namespace Tsp.Domain.Models
     public class Reservations
     {
         public int ReservationId { get; set; }
+        // TODO Remove itemid as Rental already maps this.
         public int ItemId { get; set; }
         //public int CustomerId {get; set;}
         public DateTime RentalDate { get; set; }
@@ -16,5 +17,6 @@ namespace Tsp.Domain.Models
 
         public Rental Rental { get; set; }
         // public Customer Customer {get; set; }
+        // TODO Create IReservationDomainService which handles the OverlappingCheck
     }
 }

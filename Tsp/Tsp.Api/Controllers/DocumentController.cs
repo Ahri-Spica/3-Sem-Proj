@@ -8,24 +8,24 @@ namespace Tsp.Api.Controllers
     [Route("api/[controller]")]
     public class DocumentController : ControllerBase
     {
-        private readonly IDocumentRepository documentRepository;
+        private readonly IDocumentRepository _documentRepository;
 
-        public DocumentController(IDocumentRepository _documentRepository)
+        public DocumentController(IDocumentRepository documentRepository)
         {
-            documentRepository = _documentRepository;
+            this._documentRepository = documentRepository;
         }
 
         [HttpPost]
         public async Task<ActionResult<Document>> AddDocument([FromBody]Document document)
         {
-            await documentRepository.AddDocument(document);
+            await _documentRepository.AddDocument(document);
             return CreatedAtAction(nameof(GetDocument), new {id = document.Id}, document);
         }
 
         [HttpGet("{id:int}")]
         public async Task<ActionResult<Document>> GetDocument(int id)
         {
-            var document = await documentRepository.GetDocumentById(id);
+            var document = await _documentRepository.GetDocumentById(id);
             if (document == null)
             {
                 return NotFound();

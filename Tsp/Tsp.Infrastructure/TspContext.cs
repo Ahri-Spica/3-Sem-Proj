@@ -13,4 +13,6 @@ public class TspContext : DbContext
     }
 
     public DbSet<Document> Documents { get; set; }
+    public DbSet<Rental> Rentals { get; set; }
+    public DbSet<Reservations> Reservations { get; set; }
 }
