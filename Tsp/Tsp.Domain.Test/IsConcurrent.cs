@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tsp.Application.Commands
+namespace Tsp.Domain.Test
 {
-    internal class Comand
+    public class IsConcurrent
     {
+
     }
 }

@@ -29,7 +29,6 @@
     <Folder Include="MapperProfiles\" />
     <Folder Include="DomainService\" />
     <Folder Include="Efc_Config\" />
-    <Folder Include="Queries\" />
   </ItemGroup>
 
   <PropertyGroup>

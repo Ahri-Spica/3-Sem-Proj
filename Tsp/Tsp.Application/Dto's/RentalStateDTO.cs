@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Tsp.Application.Dto_s
 {
-    internal class Dto
+    public class RentalStateDTO
     {
+        public Guid RentalId { get; set; }
+        public uint RowVersion { get; set; }
     }
 }
